@@ -1,0 +1,265 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "title": "Wireless Bluetooth Earbuds",
+            "description": "High-quality wireless earbuds with noise-cancellation technology.",
+            "price": 89.99,
+            "category": "electronics",
+            "image": "https://lh3.googleusercontent.com/bip/APOwr805kwmWcr-VZokaxVq9JviMR-OE7qQKxQeeiHRF9K65RO7I4betObeXEislp3xPzcd_GsrAUsRH1drj3ueXt53sqXgbpeeo20wlopmSh3HjiwFoTarSf7UBgPhhtZitAk6jH0DdSedeXQ0FVBpBEFNWoJUyJPINxYqyGLY9OmLfjEIbq43kqjZK_alDaSeWh4kxqCRrmCoc=w250-h200-p",
+            "quantity": 50,
+            "rating": {
+                "rate": 4.7,
+                "count": 120
+            }
+        },
+        {
+            "id": 2,
+            "title": "Smartphone Case",
+            "description": "Durable smartphone case with shock-absorption features for various models.",
+            "price": 19.95,
+            "category": "electronics",
+            "image": "https://lh3.googleusercontent.com/bip/APOwr80Et0wH9RYn_OSjcqAm_8sr88W8JpUemOPBVmp0Y5cm69itlQE9yVv5uMDrnsyOBIGLetD2VIeg7ABOq1TINO0qom_j06WdKVnLZrsOp7T2GUXXd03nFtaCVKtQBQ37GUFXuSx8iwbGl6IuQFM8y8IwHsyNHQUjNS1kbVDLAOZUilYe4u5n3Ix-e_1QLh1D69WAoY3axS2xnoK05LVqLtsc=w250-h200-p",
+            "quantity": 100,
+            "rating": {
+                "rate": 4.2,
+                "count": 85
+            }
+        },
+        {
+            "id": 3,
+            "title": "Men's Classic Leather Watch",
+            "description": "Elegant men's watch with a genuine leather strap and water-resistant design.",
+            "price": 129.99,
+            "category": "jewellery",
+            "image": "#",
+            "quantity": 30,
+            "rating": {
+                "rate": 4.9,
+                "count": 65
+            }
+        },
+        {
+            "id": 4,
+            "title": "Wireless Charging Pad",
+            "description": "Qi-enabled wireless charging pad compatible with smartphones and other devices.",
+            "price": 29.99,
+            "category": "electronics",
+            "image": "#",
+            "quantity": 75,
+            "rating": {
+                "rate": 4.5,
+                "count": 110
+            }
+        },
+        {
+            "id": 5,
+            "title": "Women's Athletic Sneakers",
+            "description": "Comfortable and stylish athletic sneakers for women, suitable for running and workouts.",
+            "price": 59.95,
+            "category": "womens clothing",
+            "image": "#",
+            "quantity": 40,
+            "rating": {
+                "rate": 4.3,
+                "count": 90
+            }
+        },
+        {
+            "id": 6,
+            "title": "Stainless Steel Water Bottle",
+            "description": "Reusable stainless steel water bottle with vacuum insulation, keeping beverages hot or cold for hours.",
+            "price": 24.99,
+            "category": "electronics",
+            "image": "#",
+            "quantity": 60,
+            "rating": {
+                "rate": 4.6,
+                "count": 70
+            }
+        },
+        {
+            "id": 7,
+            "title": "Gaming Mechanical Keyboard",
+            "description": "High-performance mechanical keyboard designed for gaming enthusiasts, with customizable RGB lighting.",
+            "price": 139.99,
+            "category": "electronics",
+            "image": "#",
+            "quantity": 25,
+            "rating": {
+                "rate": 4.8,
+                "count": 55
+            }
+        },
+        {
+            "id": 8,
+            "title": "Vintage Polaroid Camera",
+            "description": "Classic instant film camera that captures vintage-style photos.",
+            "price": 79.95,
+            "category": "electronics",
+            "image": "#",
+            "quantity": 15,
+            "rating": {
+                "rate": 4.0,
+                "count": 40
+            }
+        },
+        {
+            "id": 9,
+            "title": "Leather Crossbody Bag",
+            "description": "Chic leather crossbody bag for daily use, with adjustable shoulder strap and multiple compartments.",
+            "price": 89.99,
+            "category": "womens clothing",
+            "image": "#",
+            "quantity": 35,
+            "rating": {
+                "rate": 4.5,
+                "count": 60
+            }
+        },
+        {
+            "id": 10,
+            "title": "Smart Fitness Tracker",
+            "description": "Advanced fitness tracker with heart rate monitoring, activity tracking, and smartphone integration.",
+            "price": 69.99,
+            "category": "electronics",
+            "image": "#",
+            "quantity": 70,
+            "rating": {
+                "rate": 4.4,
+                "count": 80
+            }
+        },
+        {
+            "id": 11,
+            "title": "HD Wireless Security Camera",
+            "description": "High-definition wireless security camera with motion detection and remote access.",
+            "price": 129.95,
+            "category": "electronics",
+            "image": "#",
+            "quantity": 20,
+            "rating": {
+                "rate": 4.6,
+                "count": 50
+            }
+        },
+        {
+            "id": 12,
+            "title": "Professional Chef's Knife",
+            "description": "Top-quality chef's knife made from high-carbon stainless steel, suitable for precision cutting.",
+            "price": 149.99,
+            "category": "electronics",
+            "image": "#",
+            "quantity": 10,
+            "rating": {
+                "rate": 4.9,
+                "count": 30
+            }
+        },
+        {
+            "id": 13,
+            "title": "Portable Bluetooth Speaker",
+            "description": "Compact and powerful portable speaker with Bluetooth connectivity, ideal for outdoor adventures.",
+            "price": 49.95,
+            "category": "electronics",
+            "image": "#",
+            "quantity": 45,
+            "rating": {
+                "rate": 4.3,
+                "count": 75
+            }
+        },
+        {
+            "id": 14,
+            "title": "Women's Oversized Sunglasses",
+            "description": "Trendy oversized sunglasses with UV protection, perfect for sunny days.",
+            "price": 29.99,
+            "category": "womens clothing",
+            "image": "#",
+            "quantity": 55,
+            "rating": {
+                "rate": 4.7,
+                "count": 65
+            }
+        },
+        {
+            "id": 15,
+            "title": "Natural Bamboo Cutting Board",
+            "description": "Environmentally-friendly bamboo cutting board with built-in juice groove and antimicrobial properties.",
+            "price": 18.99,
+            "category": "electronics",
+            "image": "#",
+            "quantity": 40,
+            "rating": {
+                "rate": 4.5,
+                "count": 55
+            }
+        },
+        {
+            "id": 16,
+            "title": "Men's Casual Sneakers",
+            "description": "Versatile men's sneakers for everyday wear, available in multiple colors.",
+            "price": 49.95,
+            "category": "mens clothing",
+            "image": "#",
+            "quantity": 65,
+            "rating": {
+                "rate": 4.2,
+                "count": 70
+            }
+        },
+        {
+            "id": 17,
+            "title": "Gemstone Necklace",
+            "description": "Exquisite gemstone necklace with intricate design, suitable for special occasions.",
+            "price": 159.99,
+            "category": "jewellery",
+            "image": "#",
+            "quantity": 25,
+            "rating": {
+                "rate": 4.6,
+                "count": 45
+            }
+        },
+        {
+            "id": 18,
+            "title": "Ultra HD Smart TV",
+            "description": "Large Ultra HD Smart TV with advanced features and streaming capabilities.",
+            "price": 799.99,
+            "category": "electronics",
+            "image": "#",
+            "quantity": 10,
+            "rating": {
+                "rate": 4.8,
+                "count": 30
+            }
+        },
+        {
+            "id": 19,
+            "title": "Statement Earrings",
+            "description": "Bold and unique statement earrings, perfect for adding a touch of glamour to any outfit.",
+            "price": 39.99,
+            "category": "jewellery",
+            "image": "#",
+            "quantity": 50,
+            "rating": {
+                "rate": 4.4,
+                "count": 60
+            }
+        },
+        {
+            "id": 20,
+            "title": "Classic Men's Suit",
+            "description": "Timeless and elegant classic men's suit for formal occasions, available in various sizes.",
+            "price": 299.99,
+            "category": "mens clothing",
+            "image": "#",
+            "quantity": 15,
+            "rating": {
+                "rate": 4.7,
+                "count": 40
+            }
+        }
+    ],
+    "users": [{}]
+}

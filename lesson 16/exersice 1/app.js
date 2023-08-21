@@ -1,6 +1,11 @@
 const express = require("express");
 const app = express();
 const { v4: uuidv4 } = require("uuid");
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
+const myPlaintextPassword = "123456";
+const someOtherPlaintextPassword = "not_bacon";
+let my_salt = 1;
 
 const port = 3000;
 app.use(express.json());
@@ -78,7 +83,7 @@ app.delete("/USERS/:id", (req, res) => {
     }
 });
 
-// תרגיל 2
+// שלב 2
 app.post("/USERS", (req, res) => {
     try {
         const newUser = req.body;
@@ -94,7 +99,7 @@ app.post("/USERS", (req, res) => {
     }
 });
 
-// תרגיל 3
+// שלב 3
 
 app.post("/USERS/find", (req, res) => {
     const email = req.body.email;
@@ -104,6 +109,32 @@ app.post("/USERS/find", (req, res) => {
     );
     if (userIndex === -1) res.send("Wrong credentials");
     else res.send("User is connected");
+});
+
+// שלב 4
+
+app.post("/USERS4", (req, res) => {
+    const newUser = req.body;
+    if (
+        !newUser.name ||
+        !newUser.age ||
+        !newUser.id ||
+        !newUser.email ||
+        !newUser.password
+    ) {
+        return res.status(500).send("Not Valid Info");
+    }
+    const { password, id, email } = newUser;
+    bcrypt.genSalt(saltRounds, (err, salt) => {
+        bcrypt.hash(password, salt, (err, hash) => {
+            // returns hash
+            console.log(hash);
+            password = hash;
+        });
+    });
+    console.log(password);
+    USERS.push(newUser);
+    res.send(USERS);
 });
 
 app.listen(port);
