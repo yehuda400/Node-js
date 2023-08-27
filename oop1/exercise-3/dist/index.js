@@ -124,30 +124,26 @@ class Hospital {
         const medicalRecord = new MedicalRecord(patient, doctor, diagnosis, prescription);
         this.medicalRecords.push(medicalRecord);
     }
+    updateDoctorAvailability(doctor, date, time) {
+        const updatedAvailability = doctor.availability.filter((timeSlot) => timeSlot.startTime !== time);
+        doctor.availability = updatedAvailability;
+    }
     addNewAppointment(appointment) {
-        const patientAge = appointment.patient.age;
-        const doctor = appointment.doctor;
-        const doctorAgeRange = doctor.ageRange;
-        const isSlotAvailable = this.appointments.every((existingAppointment) => existingAppointment.doctor !== doctor ||
+        const isSlotAvailable = this.appointments.every((existingAppointment) => existingAppointment.doctor !== appointment.doctor ||
             existingAppointment.date !== appointment.date ||
             existingAppointment.time !== appointment.time);
-        const isPatientAgeInRange = patientAge >= doctorAgeRange.min &&
-            patientAge <= doctorAgeRange.max;
-        if (isSlotAvailable && isPatientAgeInRange) {
+        if (isSlotAvailable) {
             this.appointments.push(appointment);
+            this.updateDoctorAvailability(appointment.doctor, appointment.date, appointment.time);
         }
         else {
-            if (!isSlotAvailable) {
-                console.log("The appointment slot is already taken.");
-            }
-            if (!isPatientAgeInRange) {
-                console.log("The patient's age is not within the doctor's age range specialization.");
-            }
+            console.log("The appointment slot is already taken.");
         }
         return this.appointments;
     }
 }
 // ******hardcode testing****** credit: chat gpt ;)
+// The doctor's availabilities are not getting updated automatically yet, to update a doctor's availability do it manually, we are sorry for the inconvenience.
 const patient1 = new Patient("P001", "John", "Doe", 30, "123 Main St", "555-1234", "Emergency Contact 1", []);
 const patient2 = new Patient("P002", "Jane", "Smith", 25, "456 Elm St", "555-5678", "Emergency Contact 2", []);
 const doctor1 = new Doctor("D001", "Dr. Emily", "Davis", 35, "456 Oak St", "S001", "Cardiology", [
@@ -163,34 +159,78 @@ const appointment2 = new Appointment(patient2, doctor2, "2023-08-31", "9:00 AM")
 const medicalRecord1 = new MedicalRecord(patient1, doctor1, "Common cold", "Rest and drink fluids.");
 const medicalRecord2 = new MedicalRecord(patient2, doctor2, "Stomach ache", "Prescribed antacids.");
 const hospital = new Hospital([patient1, patient2], [doctor1, doctor2], [appointment1, appointment2], [medicalRecord1, medicalRecord2]);
-console.log("All Appointments:");
-console.log(hospital.getAllAppointmentsInfo());
-console.log("\nAppointments for Doctor D001:");
-hospital.getAppointmentsByDocIdInfo(hospital.appointments, "D001");
-console.log("\nAppointments for Patient P002:");
-hospital.getAppointmentsByPatientIdInfo(hospital.appointments, "P002");
-console.log("\nAppointments on 2023-08-30:");
-hospital.appointmentsByDateInfo(hospital.appointments, "2023-08-30");
-console.log("\nDoctors in Cardiology:");
-console.log(hospital.searchDoctorBySpecialty("Cardiology"));
-console.log("\nMedical Records for Patient P001:");
-console.log(hospital.getMedicalRecords(patient1));
-console.log("\nDoctor D002's Schedule on 2023-08-31:");
-console.log(hospital.getDoctorSchedule(doctor2, "2023-08-31"));
-console.log("\nDoctor D001's Available Times on 2023-08-30:");
-console.log(hospital.getDoctorAvailability(doctor1, "2023-08-30"));
-console.log("\nAdding New Patient:");
-const newPatient = new Patient("P003", "Alice", "Johnson", 28, "789 Pine St", "555-9876", "Emergency Contact 3", []);
-console.log(hospital.addNewPatient(newPatient));
-console.log("\nAdding New Doctor:");
-const newDoctor = new Doctor("D003", "Dr. Robert", "White", 45, "234 Maple St", "S003", "Orthopedics", [
-    { startTime: "10:00 AM", endTime: "1:00 PM" },
-    { startTime: "3:00 PM", endTime: "6:00 PM" },
-], { min: 5, max: 18 });
-console.log(hospital.addNewDoctor(newDoctor));
-console.log("\nCreating New Medical Record:");
-hospital.createMedicalRecord(patient1, doctor1, "Fever", "Prescribed fever reducer.");
-console.log(hospital.getMedicalRecords(patient1));
-console.log("\nAdding New Appointment:");
-const newAppointment = new Appointment(patient2, doctor2, "2023-09-01", "11:00 AM");
-console.log(hospital.addNewAppointment(newAppointment));
+// console.log("All Appointments:");
+// console.log(hospital.getAllAppointmentsInfo());
+// console.log("\nAppointments for Doctor D001:");
+// hospital.getAppointmentsByDocIdInfo(hospital.appointments, "D001");
+// console.log("\nAppointments for Patient P002:");
+// hospital.getAppointmentsByPatientIdInfo(hospital.appointments, "P002");
+// console.log("\nAppointments on 2023-08-30:");
+// hospital.appointmentsByDateInfo(hospital.appointments, "2023-08-30");
+// console.log("\nDoctors in Cardiology:");
+// console.log(hospital.searchDoctorBySpecialty("Cardiology"));
+// console.log("\nMedical Records for Patient P001:");
+// console.log(hospital.getMedicalRecords(patient1));
+// console.log("\nDoctor D002's Schedule on 2023-08-31:");
+// console.log(hospital.getDoctorSchedule(doctor2, "2023-08-31"));
+// console.log("\nDoctor D001's Available Times on 2023-08-30:");
+// console.log(hospital.getDoctorAvailability(doctor1, "2023-08-30"));
+// console.log("\nAdding New Patient:");
+// const newPatient = new Patient(
+//     "P003",
+//     "Alice",
+//     "Johnson",
+//     28,
+//     "789 Pine St",
+//     "555-9876",
+//     "Emergency Contact 3",
+//     []
+// );
+// console.log(hospital.addNewPatient(newPatient));
+// console.log("\nAdding New Doctor:");
+// const newDoctor = new Doctor(
+//     "D003",
+//     "Dr. Robert",
+//     "White",
+//     45,
+//     "234 Maple St",
+//     "S003",
+//     "Orthopedics",
+//     [
+//         { startTime: "10:00 AM", endTime: "1:00 PM" },
+//         { startTime: "3:00 PM", endTime: "6:00 PM" },
+//     ],
+//     { min: 5, max: 18 }
+// );
+// console.log(hospital.addNewDoctor(newDoctor));
+// console.log("\nCreating New Medical Record:");
+// hospital.createMedicalRecord(
+//     patient1,
+//     doctor1,
+//     "Fever",
+//     "Prescribed fever reducer."
+// );
+// console.log(hospital.getMedicalRecords(patient1));
+// console.log("\nAdding New Appointment:");
+// const newAppointment = new Appointment(
+//     patient2,
+//     doctor2,
+//     "2023-09-01",
+//     "11:00 AM"
+// );
+// console.log(hospital.addNewAppointment(newAppointment));
+// // Checking the doctor's availability
+// console.log("Doctor D001's Availability on 2023-08-30:");
+// console.log(hospital.getDoctorAvailability(doctor1, "2023-08-30"));
+// // Creating a new appointment
+// const newAppointment = new Appointment(
+//     patient1,
+//     doctor1,
+//     "2023-08-30",
+//     "10:00 AM"
+// );
+// // Adding the new appointment to the hospital
+// hospital.addNewAppointment(newAppointment);
+// // Checking the updated doctor's availability
+// console.log("\nDoctor D001's Updated Availability on 2023-08-30:");
+// console.log(hospital.getDoctorAvailability(doctor1, "2023-08-30"));
